@@ -148,16 +148,12 @@ O diagrama de classes representa a plataforma responsável por gerenciar múltip
   - **Workers assíncronos**: processamento de regras, rotinas e alertas.  
   - **Banco de Dados**: armazenar estado e histórico.  
 
----
-
 ### Topologia
 - **Fluxo principal:**  
   `IoT Core/Broker (multi-AZ)` ⇄ `Gateway/Edge (opcional)` ⇄ `Dispositivos`  
 - **Camadas:**  
   - **Control Plane:** API, autenticação (Auth), motor de regras (Rules).  
   - **Data Plane:** ingestão, armazenamento de logs e métricas.  
-
----
 
 ### Escala e Resiliência
 - Auto-scaling dinâmico.  
@@ -167,8 +163,6 @@ O diagrama de classes representa a plataforma responsável por gerenciar múltip
 - **Retry** com backoff exponencial.  
 - **Circuit breaker** para isolar falhas.  
 
----
-
 ### Segurança
 - **mTLS** por dispositivo.  
 - **RBAC/OIDC** para autenticação e controle de acesso de usuários.  
@@ -177,23 +171,17 @@ O diagrama de classes representa a plataforma responsável por gerenciar múltip
 - **Rate limiting** para evitar abusos.  
 - **WAF** (Web Application Firewall) para proteção contra ataques.  
 
----
-
 ### Observabilidade
 - **Tracing distribuído** para rastreamento de requisições.  
 - **Logs estruturados** para análise e auditoria.  
 - **Métricas** por casa e por grupo.  
 - **Auditoria imutável** para conformidade regulatória.  
 
----
-
 ### Atualização OTA (Over-The-Air)
 - Canal assinado para distribuição segura de firmware/software.  
 - Versionamento e controle de versões.  
 - **Rollout gradual** para minimizar riscos.  
 - **Rollback** em caso de falhas.  
-
----
 
 ### Custos
 - Uso de **serverless** e containers gerenciados para otimizar recursos.  
@@ -209,34 +197,24 @@ O diagrama de classes representa a plataforma responsável por gerenciar múltip
 - **AWS IoT Core** (ou alternativas como **Azure IoT Hub** / **GCP IoT**).
 - **API Gateway**, **AWS Lambda** e **ECS** para execução e orquestração.
 
----
-
 ### Mensageria
 - **MQTT**: mosquitto ou EMQX para comunicação IoT.  
 - **Filas internas**: SQS ou Kafka para processamento assíncrono.
-
----
 
 ### Banco de Dados
 - **Redis**: gerenciamento de estado em memória.  
 - **PostgreSQL** ou **MongoDB**: armazenamento de metadados.  
 - **TimeSeries** / **Parquet**: histórico e análise de séries temporais.
 
----
-
 ### Linguagens
 - **Backend / Workers**: Node.js com TypeScript ou Python.  
 - **Aplicativos móveis**: Swift, Kotlin ou Flutter.
-
----
 
 ### Infra & DevOps
 - **Docker / Docker Compose** para empacotamento e execução local.  
 - **Terraform** para infraestrutura como código.  
 - **CI/CD** com GitHub Actions.  
 - **OpenTelemetry** para observabilidade.
-
----
 
 ### Diagramas
 - **PlantUML** para modelagem UML.  
